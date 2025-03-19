@@ -52,22 +52,20 @@
 body {
   margin: 0;
   display: flex;
-  max-width: 100vw;
-  min-height: 100vh;
-  background-color: #0d1117;
-  color: #f0f6fc;
-
-  /* background-color: white;
-  color: #0d1117; */
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  color: #0d1117;
 }
 
 #root {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 100%;
   height: 100%;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 7% 1% 92%;
+  justify-content: center;
+  align-items: center;
 }
 
 #side_nav {

@@ -1,0 +1,6 @@
+<manifest>
+    <application 
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/낭만스키"
+        android:theme="@style/AppTheme">

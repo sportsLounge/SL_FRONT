@@ -1,10 +1,39 @@
 {
-    "name":"",
-    "short_name":"",
-    "start_url":"/",
-    "icons": [
-        {}
-    ],
-    "display":"stand_alone",
-    "background_color":"#ffffff"
+  "name": "낭만스키",
+  "short_name": "낭스",
+  "start_url": ".",
+  "id": "/",
+  "icons": [
+    {
+      "src": "/public/낭만스키로고누끼.png",
+      "sizes": "1024x1024",
+      "type": "image/webp"
+    },
+    {
+      "src": "/public/낭만스키 로고.webp",
+      "sizes": "1024x1024",
+      "type": "image/webp"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/public/wide_scr.png",
+      "sizes": "2538x1252",
+      "form_factor": "wide",
+      "label": "홈화면",
+      "type": "image/png"
+    }
+  ],
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 3000,
+      "backgroundColor": "#ffffffff",
+      "androidSplashResourceName": "splash",
+      "androidScaleType": "CENTER_CROP"
+    }
+  }
 }
