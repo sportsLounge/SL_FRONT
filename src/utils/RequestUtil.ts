@@ -1,3 +1,9 @@
+const { VITE_BASE_URL } =import.meta.env;
+
+enum EndPoint {
+  MEMBER="/member",
+}
+
 export class RequestUtil {
   /** @description 회원관련 요청 모음  */
   static MemberRequest = class {
@@ -6,7 +12,7 @@ export class RequestUtil {
      * @param
      */
     static async getMemberInfo() {
-      const request = await fetch("", {
+      const request = await fetch(VITE_BASE_URL + EndPoint.MEMBER, {
         method: "GET",
       });
 
