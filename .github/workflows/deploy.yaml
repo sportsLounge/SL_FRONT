@@ -37,7 +37,7 @@ jobs:
 
       # 3. 프로젝트 의존성 설치
       - name: Install dependencies
-        run: npm ci # clean install, package-lock.json 기준 설치
+        run: npm install
 
       # 4. 빌드 환경 설정
       - name: configure build environment
