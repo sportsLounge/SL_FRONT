@@ -43,7 +43,7 @@ jobs:
       - name: configure build environment
         id: configure-env # 다른 step에서 참조하기 위한 ID
         run: |
-          if["${{github.ref}}"="refs/heads/develop"];then
+          if["${{github.ref}}"="refs/heads/develop"]; then
             echo "environment=dev" >> $GITHUB_OUTPUT
             echo "deploy_branch=gh-pages-dev" >> $GITHUB_OUTPUT
           else
