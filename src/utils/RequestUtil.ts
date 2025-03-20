@@ -1,7 +1,7 @@
-const { VITE_BASE_URL } =import.meta.env;
+const { VITE_BASE_URL } = import.meta.env;
 
 enum EndPoint {
-  MEMBER="/member",
+  MEMBER = "/member",
 }
 
 export class RequestUtil {
