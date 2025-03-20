@@ -19,8 +19,8 @@ export default function LoginDrawer() {
       </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader className="flex justify-center text-2xl">
-          <DrawerTitle>{"안녕하세요, 낭만스키 입니다."}</DrawerTitle>
-          <DrawerDescription>{"스키 초고수가 되는 그날까지"}</DrawerDescription>
+          <DrawerTitle>{"Sports Lounge"}</DrawerTitle>
+          <DrawerDescription>{""}</DrawerDescription>
         </DrawerHeader>
         <DrawerFooter>
           <Button variant="outline" className="bg-amber-400 text-white">
