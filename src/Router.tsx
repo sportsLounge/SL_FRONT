@@ -4,7 +4,7 @@ import Main from "./components/Main";
 export default function Router() {
   return (
     <Routes>
-      <Route path="/" Component={() => <Main />} />
+      <Route path="/PWA_DEMO" Component={() => <Main />} />
     </Routes>
   );
 }

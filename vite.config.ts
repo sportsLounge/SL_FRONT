@@ -6,17 +6,20 @@ import path from "path";
 
 // reference : https://vite.dev/config/
 //@ts-ignore
-export default defineConfig(({command,mode}:ConfigEnv) => {
+export default defineConfig(({ _command, mode }: ConfigEnv) => {
   const env = loadEnv(mode, process.cwd());
-  
+
   console.info("Mode : ", mode);
   console.info("Current Working Directory : ", process.cwd());
   console.info("Load Env : ", env);
 
   return {
     plugins: [react(), tailwindcss(), basicSsl()],
+    base: "/PWA_DEMO",
     define: {
-      "process.env.NODE_ENV" : JSON.stringify(env),
+      "process.env.NODE_ENV": JSON.stringify(env),
+      __APP_ENV__: JSON.stringify(env.VITE_APP_ENV),
+      __API_URL__: JSON.stringify(env.VITE_API_URL),
     },
     resolve: {
       alias: {
@@ -29,5 +32,5 @@ export default defineConfig(({command,mode}:ConfigEnv) => {
       port: 3000,
       open: true,
     },
-  }
+  };
 });
