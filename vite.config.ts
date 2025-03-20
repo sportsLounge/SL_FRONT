@@ -15,6 +15,7 @@ export default defineConfig(({ _command, mode }: ConfigEnv) => {
 
   return {
     plugins: [react(), tailwindcss(), basicSsl()],
+    base: mode !== "local" ? "/PWA_DEMO" : "/",
     define: {
       "process.env.NODE_ENV": JSON.stringify(env),
       __APP_ENV__: JSON.stringify(env.VITE_APP_ENV),
