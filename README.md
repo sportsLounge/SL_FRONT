@@ -28,7 +28,7 @@ export default defineConfig({
   },
 });
 ```
-#### ========================================== Quick Start =============================================
+#### ================ Quick Start ================
 
 ### 1. git clone 이후
 
@@ -55,3 +55,4 @@ npm run dev
 // 각 환경(dev, stg, prd)마다의 base url이 나옴
 const { VITE_BASE_URL } = import.meta.env;
 ```
+### 6. !! .env 파일이 반드시 필요하니 요청할 것
