@@ -6,26 +6,29 @@ import {
   CardTitle,
   //   CardFooter,
 } from "@/components/ui/card";
+import { useNavigate } from "react-router-dom";
 
 export default function OptionCards() {
+  const navigate = useNavigate();
+  
   return (
-    <div className="w-full flex justify-center space-x-2">
-      <Card>
+    <div className="w-full grid grid-cols-2 space-x-2">
+      <Card onClick={() => navigate("/somepath1")}>
         <CardHeader>
-          <CardTitle>강습받기 </CardTitle>
-          <CardDescription>강습을 받아보셈</CardDescription>
+          <CardTitle> Test Title1 </CardTitle>
+          <CardDescription>Test Sub_title1</CardDescription>
         </CardHeader>
         <CardContent>
           <img src="/로고색상반전.png" alt="" />
         </CardContent>
       </Card>
-      <Card>
+      <Card onClick={() => navigate("/somepath2")}>
         <CardHeader>
-          <CardTitle>강습하기</CardTitle>
-          <CardDescription>강습을 해보셈</CardDescription>
+          <CardTitle>Test Title2</CardTitle>
+          <CardDescription>Test Sub_title2</CardDescription>
         </CardHeader>
         <CardContent>
-          <img src="/낭만스키 로고.webp" alt="" />
+          <img src="/로고.webp" alt="" />
         </CardContent>
       </Card>
     </div>
