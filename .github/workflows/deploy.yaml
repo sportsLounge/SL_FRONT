@@ -44,11 +44,11 @@ jobs:
         id: configure-env # 다른 step에서 참조하기 위한 ID
         run: |
           if [ "${{ github.ref }}" = "refs/heads/develop" ]; then
-            echo "environment=dev" >> $GITHUB_OUTPUT
-            echo "deploy_branch=gh-pages-dev" >> $GITHUB_OUTPUT
+            echo "environment=dev" >> $GITHUB_ENV
+            echo "FIREBASE_CHANNEL=dev" >> $GITHUB_ENV
           else
-            echo "environment=prod" >> $GITHUB_OUTPUT
-            echo "deploy_branch=gh-pages" >> $GITHUB_OUTPUT
+            echo "environment=prod" >> $GITHUB_ENV
+            echo "FIREBASE_CHANNEL=live" >> $GITHUB_ENV
           fi
 
       # 5. 프로젝트 빌드
@@ -59,20 +59,32 @@ jobs:
           VITE_APP_ENV: ${{ steps.configure-env.outputs.environment }}
         run: npm run build -- --mode ${{ steps.configure-env.outputs.environment }}
 
+      # 6. FireBase 에 배포
+      - name: Deploy to FireBase Hosting ^^
+        uses: FireBaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: "${{ secrets.GITHUB_TOKEN }}"  # github actions 에서 자동으로 생성해서 secrets에 할당해줌
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}"
+          projectId: "${{ secrets.FIREBASE_APP_ID }}"
+          channelId: "${{ steps.configure-env.outputs.FIREBASE_CHANNEL }}"
+
+
+      # ========================== FireBase hosting 으로 전환하면서 필요없어짐 ==========================
+      
       # 6. GitHub Pages 설정
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
+      # - name: Setup Pages
+      #   uses: actions/configure-pages@v4
 
-      # 7. 빌드 결과물을 아티팩트로 업로드
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: "./dist" # Vite 빌드 출력 디렉토리
+      # 7. 빌드 결과물을 아티팩트로 업로드  
+      # - name: Upload artifact
+      #   uses: actions/upload-pages-artifact@v3
+      #   with:
+      #     path: "./dist" # Vite 빌드 출력 디렉토리
 
-      # 8. GitHub Pages에 배포
-      - name: Deploy to github pages ^^
-        id: final_deployment
-        uses: actions/deploy-pages@v4
-        with:
-          # develop 브랜치의 경우 미리보기 모드로 배포
-          preview: ${{ github.ref != 'refs/heads/main' }}
+      # # 8. GitHub Pages에 배포
+      # - name: Deploy to github pages ^^
+      #   id: final_deployment
+      #   uses: actions/deploy-pages@v4
+      #   with:
+      #     # develop 브랜치의 경우 미리보기 모드로 배포
+      #     preview: ${{ github.ref != 'refs/heads/main' }}
