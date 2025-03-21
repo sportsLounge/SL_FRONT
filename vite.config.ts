@@ -23,12 +23,10 @@ export default defineConfig(({ _command, mode }: ConfigEnv) => {
     },
     resolve: {
       alias: {
-        "@": path.resolve(__dirname, "./src"),
+        "@": path.resolve(__dirname, "./public"),
       },
     },
     server: {
-      //@ts-ignore
-      // https: true,
       port: 3000,
       open: true,
     },

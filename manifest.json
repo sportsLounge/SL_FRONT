@@ -5,12 +5,12 @@
   "id": "/",
   "icons": [
     {
-      "src": "/public/낭만스키로고누끼.png",
+      "src": "/public/로고누끼.png",
       "sizes": "1024x1024",
       "type": "image/webp"
     },
     {
-      "src": "/public/낭만스키 로고.webp",
+      "src": "/public/로고.webp",
       "sizes": "1024x1024",
       "type": "image/webp"
     }
