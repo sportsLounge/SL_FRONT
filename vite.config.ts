@@ -15,7 +15,7 @@ export default defineConfig(({ _command, mode }: ConfigEnv) => {
 
   return {
     plugins: [react(), tailwindcss(), basicSsl()],
-    base: "/PWA_DEMO",
+    base: "/",
     define: {
       "process.env.NODE_ENV": JSON.stringify(env),
       __APP_ENV__: JSON.stringify(env.VITE_APP_ENV),
@@ -23,7 +23,7 @@ export default defineConfig(({ _command, mode }: ConfigEnv) => {
     },
     resolve: {
       alias: {
-        "@": path.resolve(__dirname, "./public"),
+        "@": path.resolve(__dirname, "./src"),
       },
     },
     server: {
