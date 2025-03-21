@@ -34,7 +34,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "22"
-          cache: "npm"
 
       # 3. 프로젝트 의존성 설치
       - name: Install dependencies
