@@ -34,6 +34,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "22"
+          cache: "npm"
 
       # 3. 프로젝트 의존성 설치
       - name: Install dependencies
@@ -67,6 +68,7 @@ jobs:
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}"
           projectId: "${{ secrets.FIREBASE_APP_ID }}"
           channelId: "${{ steps.configure-env.outputs.FIREBASE_CHANNEL }}"
+          entryPoint: "${{ matrix.path }}"
 
 
       # ========================== FireBase hosting 으로 전환하면서 필요없어짐 ==========================
