@@ -15,8 +15,8 @@ on:
 
 jobs:
   deploy:
-    # 실행 환경 지정 (최신 windows)
-    runs-on: windows-latest
+    # 실행 환경 지정 (최신 ubuntu)
+    runs-on: ubuntu-latest
 
     environment:
       # main 브랜치면 production, 아니면 development 환경 사용
