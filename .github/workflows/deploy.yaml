@@ -67,7 +67,7 @@ jobs:
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}"
           projectId: "${{ secrets.FIREBASE_APP_ID }}"
           channelId: "${{ steps.configure-env.outputs.FIREBASE_CHANNEL }}"
-          entryPoint: "${{ matrix.path }}"
+          entryPoint: "."
 
 
       # ========================== FireBase hosting 으로 전환하면서 필요없어짐 ==========================
