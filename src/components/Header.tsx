@@ -12,7 +12,7 @@ export default function Header() {
         <span className="h-full flex items-center">
           <Link to={"/to"}>
             <img
-              src="/public/낭만스키로고누끼.png"
+              src="/로고누끼.png"
               alt="logo"
               style={{ width: "50px", height: "50px" }}
             />

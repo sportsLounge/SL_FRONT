@@ -16,7 +16,7 @@ export default function OptionCards() {
           <CardDescription>강습을 받아보셈</CardDescription>
         </CardHeader>
         <CardContent>
-          <img src="/public/로고색상반전.png" alt="" />
+          <img src="/로고색상반전.png" alt="" />
         </CardContent>
       </Card>
       <Card>
@@ -25,7 +25,7 @@ export default function OptionCards() {
           <CardDescription>강습을 해보셈</CardDescription>
         </CardHeader>
         <CardContent>
-          <img src="/public/낭만스키 로고.webp" alt="" />
+          <img src="/낭만스키 로고.webp" alt="" />
         </CardContent>
       </Card>
     </div>
