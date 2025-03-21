@@ -10,8 +10,14 @@ import {
 } from "@/components/ui/drawer";
 import { Button } from "@/components/ui/button";
 import { Separator } from "./ui/separator";
+import { useEffect } from "react";
 
-export default function LoginDrawer() {
+export default function LoginDrawer({ bw }:{bw?:number}) {
+  
+  useEffect(() => {
+    console.log("넓이", bw);
+  },[ ]);
+
   return (
     <Drawer>
       <DrawerTrigger asChild>
@@ -37,7 +43,7 @@ export default function LoginDrawer() {
             <Button variant={"outline"}>다음에 다시하기</Button>
           </DrawerClose>
           <div className="flex h-5 justify-center items-center space-x-4 text-xs text-gray-400">
-            <div>강사님으로 활동하시나요?</div>
+            <div>bottom text ?</div>
             <Separator orientation="vertical" className="w-4" />
             <div>로그인에 어려움을 겪고 계신가요?</div>
           </div>
