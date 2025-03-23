@@ -1,5 +1,5 @@
-import CarouselWrap from "./CarouselWrap";
-import OptionCards from "./OptionCards";
+import CarouselWrap from "@/components/customs/CarouselWrap";
+import OptionCards from "./customs/OptionCards";
 import { Separator } from "./ui/separator";
 
 export default function Main() {
