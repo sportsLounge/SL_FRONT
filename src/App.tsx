@@ -5,7 +5,9 @@ function App() {
   return (
     <>
       <Header />
-      <Router />
+      <div className="w-full h-full box-border flex-col justify-center p-2">
+        <Router />
+      </div>
     </>
   );
 }
