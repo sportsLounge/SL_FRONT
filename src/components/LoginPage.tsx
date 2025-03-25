@@ -1,6 +1,3 @@
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-
 export default function LoginPage() {
   const validation = (value: string) => {
     const regex = /\d{3}-\d{4}-\d{4}/;
@@ -38,15 +35,12 @@ export default function LoginPage() {
   };
 
   return (
-    <div
-      className="w-full h-full flex-col justify-center items-center"
-      id="login-form-wrapper"
-    >
+    <div className="" id="login-form-wrapper">
       <div className="">
         <h2 className=" text-2xl"> 휴대폰 번호를 입력해주세요 </h2>
       </div>
       <div>
-        <Input
+        <input
           type={"tel"}
           placeholder="휴대폰 번호(-제외)"
           className="text-gray-200"
@@ -55,9 +49,7 @@ export default function LoginPage() {
         />
       </div>
       <div>
-        <Button variant={"link"} className="w-full bg-gray-300 text-white">
-          {"다음"}
-        </Button>
+        <button className="">{"다음"}</button>
       </div>
     </div>
   );

@@ -1,6 +1,4 @@
 import { Link } from "react-router-dom";
-import { Separator } from "@/components/ui/separator";
-import LoginDrawer from "@/components/customs/LoginDrawer";
 import { useCallback, useEffect, useState } from "react";
 
 export default function Header() {
@@ -21,11 +19,8 @@ export default function Header() {
 
   return (
     <>
-      <div
-        className="w-full h-full text-secondary-foreground"
-        id="header_wrapper"
-      >
-        <span className="h-full flex items-center">
+      <div className="" id="header_wrapper">
+        <span className="">
           <Link to={"/tutee"}>
             <img
               src="/로고누끼.png"
@@ -33,10 +28,8 @@ export default function Header() {
               style={{ width: "50px", height: "50px" }}
             />
           </Link>
-          <LoginDrawer bw={1} />
         </span>
       </div>
-      <Separator />
     </>
   );
 }
