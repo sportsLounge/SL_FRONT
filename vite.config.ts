@@ -1,7 +1,6 @@
 import { ConfigEnv, defineConfig, loadEnv } from "vite";
 import react from "@vitejs/plugin-react";
 import basicSsl from "@vitejs/plugin-basic-ssl";
-import tailwindcss from "@tailwindcss/vite";
 import path from "path";
 
 // reference : https://vite.dev/config/
@@ -14,7 +13,7 @@ export default defineConfig(({ _command, mode }: ConfigEnv) => {
   console.info("Load Env : ", env);
 
   return {
-    plugins: [react(), tailwindcss(), basicSsl()],
+    plugins: [react(), basicSsl()],
     base: "/",
     define: {
       "process.env.NODE_ENV": JSON.stringify(env),
