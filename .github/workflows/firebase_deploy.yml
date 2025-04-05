@@ -14,7 +14,7 @@ permissions:
   pull-requests: write
 
 jobs:
-  deploy: # PR 이 merge 되었을 때만 실행되도록 변경
+  deploy: # PR 이 merge 되었을 때만 실행되도록 변경 || actions 탭에서 직접 실행 한 경우도 추가
     if: github.event.pull_request.merged == true || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     steps:

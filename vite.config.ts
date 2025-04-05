@@ -1,6 +1,7 @@
 import { ConfigEnv, defineConfig, loadEnv } from "vite";
 import react from "@vitejs/plugin-react";
 import basicSsl from "@vitejs/plugin-basic-ssl";
+import { VitePWA } from "vite-plugin-pwa";
 import path from "path";
 
 // reference : https://vite.dev/config/
@@ -13,7 +14,21 @@ export default defineConfig(({ _command, mode }: ConfigEnv) => {
   console.info("Load Env : ", env);
 
   return {
-    plugins: [react(), basicSsl()],
+    plugins: [
+      react(),
+      basicSsl(),
+      VitePWA({
+        registerType: "autoUpdate",
+        manifest: {
+          name: "Sports Lounge",
+          short_name: "SL",
+          start_url: "/",
+          display: "standalone",
+          background_color: "#ffffff",
+          theme_color: "#000000",
+        },
+      }),
+    ],
     base: "/",
     define: {
       "process.env.NODE_ENV": JSON.stringify(env),
