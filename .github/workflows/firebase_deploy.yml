@@ -60,7 +60,7 @@ jobs:
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_PWA_DEMO_E8C14 }}
           projectId: pwa-demo-e8c14
           channelId: "${{ steps.configure-env.outputs.FIREBASE_CHANNEL }}"
-          entryPoint: "dist"
+          entryPoint: "/"
         env:
           FIREBASE_AUTH_TOKEN: ${{ secrets.FIREBASE_AUTH_TOKEN }} # Firebase 인증 토큰
 
