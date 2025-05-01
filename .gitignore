@@ -26,6 +26,10 @@ dist-ssr
 package-lock.json
 .env*
 
+# PWA 
 /public/serviceWorker.js
 /android
 /ios
+
+# swagger
+swagger-spec

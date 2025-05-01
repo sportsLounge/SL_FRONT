@@ -1,6 +1,6 @@
 ## SL_FRONT
 
-#### ================ Quick Start ================
+#### ================ GUIDE_Start ================
 
 ### 1. git clone 이후
 
@@ -32,6 +32,19 @@ const { VITE_BASE_URL } = import.meta.env;
 
 ### 6. !! .env 파일이 반드시 필요하니 요청할 것
 
+### 7. API Call 코드 generate 하기
+
+```bash
+npm run update:swagger-spec
+```
+
+### 8. ROOT 디렉토리에 /swagger-spec/download 디렉토리와 /swagger-spec/ts 디렉토리가 생성되었다면 성공
+
+- ts 디렉토리 하위의 apis 디렉토리에서 적절한 api call function 을 사용하면 된다..
+- 요청 기본 주소를 변경하고 싶다면 /ts/src 디렉토리 내의 runtime.ts 파일에 정의되어 있는 BASE_PATH 변수의 주소를 바꿔주면 된다..
+
+#### ================ GUIDE_END ================
+
 [MDN (pwa)](https://developer.mozilla.org/ko/docs/Web/Progressive_web_apps)
 
 ### 1. must make "manifest" file in project
@@ -60,6 +73,5 @@ export default defineConfig({
   },
 });
 ```
-
 
 [개발기_주소] (https://pwa-demo-e8c14--dev-y2jd1r9p.web.app)
