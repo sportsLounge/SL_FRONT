@@ -9,11 +9,11 @@ export class AuthUtil {
 
     const queryParam = new URLSearchParams({
       client_id: REST_API_KEY,
-      redirect_uri: "http://localhost:3000/tutee/login",
-      prompt: "select_account",
+      redirect_uri: "https://localhost:3000/auth/redirection",
       response_type: "code",
+      prompt: "select_account",
     });
 
-    window.location.href = `${url}?${queryParam}`;
+    return `${url}?${queryParam}`;
   }
 }

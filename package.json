@@ -5,9 +5,10 @@
   "type": "module",
   "config": {
     "downloadSwaggerSpecFrom": "https://slbe-454806.appspot.com/v3/api-docs",
-    "swaggerSpecDir": "./swagger-spec/download/",
+    "downloadSwaggerSpecLocal": "http://localhost:8080/v3/api-docs",
+    "swaggerSpecDir": "./src/swagger-spec/download/",
     "swaggerSpecFileName": "spec.json",
-    "specOutPath": "./swagger-spec/ts"
+    "specOutPath": "./src/swagger-spec/ts"
   },
   "scripts": {
     "dev": "vite --mode dev",
@@ -17,9 +18,11 @@
     "build:prod": "tsc -b && vite build --mode production",
     "lint": "eslint .",
     "preview": "vite preview",
-    "download:swagger-spec": "cross-var \"mkdirp $npm_package_config_swaggerSpecDir && download $npm_package_config_downloadSwaggerSpecFrom > $npm_package_config_swaggerSpecDir$npm_package_config_swaggerSpecFileName\"",
-    "build:swagger-spec": "cross-var \"rimraf $npm_package_config_specOutpath && openapi-generator-cli generate -i $npm_package_config_swaggerSpecDir$npm_package_config_swaggerSpecFileName -g typescript-fetch -o $npm_package_config_specOutPath --skip-validate-spec --additional-properties=npmName=restClient,supportsES6=true,withInterfaces=true,typescriptThreePlus=true\"",
-    "update:swagger-spec": "npm-run-all download:swagger-spec build:swagger-spec"
+    "download:local-swagger-spec":"cross-var \"mkdirp $npm_package_config_swaggerSpecDir && download $npm_package_config_downloadSwaggerSpecLocal > $npm_package_config_swaggerSpecDir$npm_package_config_swaggerSpecFileName\"",
+    "download:dev-swagger-spec": "cross-var \"mkdirp $npm_package_config_swaggerSpecDir && download $npm_package_config_downloadSwaggerSpecFrom > $npm_package_config_swaggerSpecDir$npm_package_config_swaggerSpecFileName\"",
+    "update:local-swagger-spec": "npm-run-all download:local-swagger-spec build:swagger-spec",
+    "update:dev-swagger-spec": "npm-run-all download:dev-swagger-spec build:swagger-spec",
+    "build:swagger-spec": "cross-var \"rimraf $npm_package_config_specOutpath && openapi-generator-cli generate -i $npm_package_config_swaggerSpecDir$npm_package_config_swaggerSpecFileName -g typescript-fetch -o $npm_package_config_specOutPath --skip-validate-spec --additional-properties=npmName=restClient,supportsES6=true,withInterfaces=true,typescriptThreePlus=true\""
   },
   "dependencies": {
     "@capacitor/android": "^7.1.0",

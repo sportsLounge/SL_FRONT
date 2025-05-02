@@ -1,21 +1,6 @@
 import { Link } from "react-router-dom";
-import { useCallback, useEffect, useState } from "react";
 
 export default function Header() {
-  const [root] = useState<HTMLElement | null>(() =>
-    document.getElementById("root")
-  );
-  const rect = useCallback(
-    () =>
-      Promise.resolve(setTimeout(() => {}, 1000)).then(
-        root?.getBoundingClientRect
-      ),
-    [root]
-  );
-
-  useEffect(() => {
-    rect();
-  }, []);
 
   return (
     <>
