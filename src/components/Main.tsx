@@ -1,7 +1,11 @@
+import ThreeTest from "./gameConsole/ThreeTest";
+
 export default function Main() {
   return (
     <>
-      <div>Main</div>
+      <div id="render_section">
+        <ThreeTest />
+      </div>
     </>
   );
 }

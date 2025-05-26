@@ -73,5 +73,9 @@ export default defineConfig({
   },
 });
 ```
+#### Lib
+- three: Three.js 핵심 라이브러리
+- @react-three/fiber: Three.js를 React에서 컴포넌트화하여 사용할 수 있게 해줌
+- @react-three/drei: 카메라, 조명 등 다양한 3D 유틸리티 컴포넌트 제공
 
 [개발기_주소] (https://pwa-demo-e8c14--dev-y2jd1r9p.web.app)
