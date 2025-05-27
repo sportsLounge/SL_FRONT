@@ -37,16 +37,16 @@ jobs:
         id: configure-env # 다른 step에서 참조하기 위한 ID
         run: |
           if [ "${{ github.ref }}" = "refs/heads/develop" ]; then
-            echo "environment=dev" >> $GITHUB_OUTPUT
+            echo "environment=development" >> $GITHUB_OUTPUT
             echo "FIREBASE_CHANNEL=dev" >> $GITHUB_OUTPUT
           else
             echo "environment=prod" >> $GITHUB_OUTPUT
             echo "FIREBASE_CHANNEL=live" >> $GITHUB_OUTPUT
           fi
-      
+
       # 5. swagger-spec generate 하기...
       - name: swagger generation
-        run : npm run update:dev-swagger-spec
+        run: npm run update:dev-swagger-spec
 
       # 6. 프로젝트 빌드
       - name: Build
