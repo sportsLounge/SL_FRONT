@@ -1,7 +1,6 @@
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Sky, Box } from "@react-three/drei";
 import { Physics, RigidBody } from "@react-three/rapier";
-import TestPlayer from "./TestPlayer";
 import TestBall from "./TestBall";
 
 export default function ThreeTest() {
