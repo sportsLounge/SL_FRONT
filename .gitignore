@@ -32,4 +32,4 @@ package-lock.json
 /ios
 
 # swagger
-src/swagger-spec
+swagger-spec

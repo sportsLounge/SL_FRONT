@@ -6,9 +6,9 @@
   "config": {
     "downloadSwaggerSpecFrom": "https://slbe-454806.appspot.com/v3/api-docs",
     "downloadSwaggerSpecLocal": "http://localhost:8080/v3/api-docs",
-    "swaggerSpecDir": "./src/swagger-spec/download/",
+    "swaggerSpecDir": "./swagger-spec/download/",
     "swaggerSpecFileName": "spec.json",
-    "specOutPath": "./src/swagger-spec/ts"
+    "specOutPath": "./swagger-spec/ts"
   },
   "scripts": {
     "dev": "vite --mode dev",

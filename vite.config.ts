@@ -14,6 +14,9 @@ export default defineConfig(({ _command, mode }: ConfigEnv) => {
   console.info("Load Env : ", env);
 
   return {
+    build: {
+      outDir: "build"
+    },
     plugins: [
       react(),
       basicSsl(),
@@ -38,6 +41,7 @@ export default defineConfig(({ _command, mode }: ConfigEnv) => {
     resolve: {
       alias: {
         "@": path.resolve(__dirname, "./src"),
+        "@swagger-spec": path.resolve(__dirname,"./swagger-spec")
       },
     },
     server: {
